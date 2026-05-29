@@ -6,7 +6,8 @@
 		"dockerfile": "Dockerfile"
 	},
 	"workspaceFolder": "/site",
-    "workspaceMount": "source=${localWorkspaceFolder},target=/site,type=bind",
+	"workspaceMount": "source=${localWorkspaceFolder},target=/site,type=bind",
+	"postAttachCommand": "bundle install",
 	"forwardPorts": [4000, 35729],
 	"portsAttributes": {
 		"4000": {
@@ -16,5 +17,10 @@
 			"label": "LiveReload"
 		}
 	},
-	"remoteUser": "jekyll"
+	"remoteUser": "jekyll",
+	"customizations": {
+		"vscode": {
+			"extensions": ["biomejs.biome", "DavidAnson.vscode-markdownlint"]
+		}
+	}
 }
