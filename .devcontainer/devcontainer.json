@@ -1,0 +1,20 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/jekyll
+{
+	"name": "Jekyll",
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+	"workspaceFolder": "/site",
+    "workspaceMount": "source=${localWorkspaceFolder},target=/site,type=bind",
+	"forwardPorts": [4000, 35729],
+	"portsAttributes": {
+		"4000": {
+			"label": "Jekyll site"
+		},
+		"35729": {
+			"label": "LiveReload"
+		}
+	},
+	"remoteUser": "jekyll"
+}
