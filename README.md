@@ -1,2 +1,2 @@
-# evova-unity-docs.github.io
+# evova-unity-docs
 Documentation for the EVOVA Unity Plugin.
