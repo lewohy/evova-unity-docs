@@ -11,8 +11,9 @@
     "**/.plugin_symlinks": true,
     "**/CVS": true
   },
-  // Prettier
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[jsonc][json]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
   "editor.formatOnSave": true,
   // Shopify Liquid
   "files.associations": {
@@ -38,5 +39,5 @@
   // Run tasks in macOS
   "terminal.integrated.profiles.osx": {
     "zsh": { "path": "/bin/zsh", "args": ["-l", "-i"] }
-  }
+  },
 }

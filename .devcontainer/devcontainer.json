@@ -22,7 +22,12 @@
         "stylelint.vscode-stylelint",
         "yzhang.markdown-all-in-one",
         // Git
-        "mhutchie.git-graph"
+        "mhutchie.git-graph",
+        "waderyan.gitblame",
+        // JSON
+        "biomejs.biome",
+        // Markdown
+        "DavidAnson.vscode-markdownlint"
       ]
     }
   }
