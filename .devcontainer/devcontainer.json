@@ -1,0 +1,10 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/rust
+{
+	"name": "mdBook",
+	"image": "mcr.microsoft.com/devcontainers/rust:2-1-trixie",
+	"features": {
+		"ghcr.io/eitsupi/devcontainer-features/mdbook:1": {},
+		"ghcr.io/dhoeric/features/act:1": {}
+	}
+}
