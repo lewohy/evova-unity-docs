@@ -2,3 +2,6 @@
 title = "evova-unity-docs"
 authors = ["Evova"]
 language = "en"
+
+[output.html]
+mathjax-support = true
