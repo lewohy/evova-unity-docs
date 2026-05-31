@@ -16,6 +16,18 @@
                 "kind": "test",
                 "isDefault": true
             }
+        },
+        {
+            "label": "mdBook: build",
+            "type": "shell",
+            "command": "mdbook",
+            "args": [
+                "build"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
         }
     ]
 }
