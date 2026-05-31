@@ -6,5 +6,16 @@
 	"features": {
 		"ghcr.io/eitsupi/devcontainer-features/mdbook:1": {},
 		"ghcr.io/dhoeric/features/act:1": {}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"github.vscode-github-actions",
+				"DavidAnson.vscode-markdownlint",
+				"mhutchie.git-graph",
+				"codezombiech.gitignore",
+				"waderyan.gitblame"
+			]
+		}
 	}
 }
