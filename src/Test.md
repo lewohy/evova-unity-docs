@@ -33,3 +33,13 @@ inline
 
 block  
 \\[ \mu = \frac{1}{N} \sum_{i=0} x_i \\]
+
+**Image**
+
+![evova header](./assets/images/evova-full-horizontal-header.png)
+
+**Video**
+
+<video width="320" height="240" controls>
+    <source src="./assets/videos/main-video-v1.mp4" type="video/mp4">
+</video>
