@@ -28,8 +28,7 @@ fn main() {
 
 **Mathjax**
 
-inline  
-\\( \int x dx = \frac{x^2}{2} + C \\)
+inline \\( \int x dx = \frac{x^2}{2} + C \\)
 
 block  
 \\[ \mu = \frac{1}{N} \sum_{i=0} x_i \\]
@@ -38,8 +37,22 @@ block
 
 ![evova header](./assets/images/evova-full-horizontal-header.png)
 
+**Center Image**
+
+<div align="center">
+    <img src="./assets/images/evova-full-horizontal-header.png">
+</div>
+
 **Video**
 
 <video width="320" height="240" controls>
     <source src="./assets/videos/main-video-v1.mp4" type="video/mp4">
 </video>
+
+**Center Video**
+
+<div align="center">
+    <video width="320" height="240" controls>
+        <source src="./assets/videos/main-video-v1.mp4" type="video/mp4">
+    </video>
+</div>

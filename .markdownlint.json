@@ -1,5 +1,6 @@
 // Example markdownlint configuration with all properties set to their default value
 {
+    "MD013": false,
     "MD033": false,
     "MD036": false
 }
