@@ -2,8 +2,8 @@
 
 # Summary
 
-- [Introduction](./README.md)
 - [Test](./Test.md)
+- [Introduction](./README.md)
 
 # User Guide
 
@@ -11,4 +11,8 @@
 - [Setup](./guide/setup.md)
 - [Usage](./guide/usage.md)
 - [Troubleshooting](./guide/troubleshooting.md)
+- [Features](./guide/features.md)
 
+# Appendix
+
+- [License](./license.md)

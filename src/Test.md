@@ -39,9 +39,14 @@ block
 
 **Center Image**
 
-<div align="center">
+<p align="center">
     <img src="./assets/images/evova-full-horizontal-header.png">
-</div>
+</p>
+
+<figure align="center">
+    <img src="./assets/images/evova-full-horizontal-header.png">
+    <figcaption>caption</figcaption>
+</figure>
 
 **Video**
 
@@ -51,8 +56,8 @@ block
 
 **Center Video**
 
-<div align="center">
+<p align="center">
     <video width="320" height="240" controls>
         <source src="./assets/videos/main-video-v1.mp4" type="video/mp4">
     </video>
-</div>
+</p>

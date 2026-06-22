@@ -11,4 +11,11 @@
         "**/.plugin_symlinks": true,
         "**/CVS": true
     },
+    "hide-files.files": [],
+    "[markdown]": {
+        "editor.unicodeHighlight.ambiguousCharacters": false,
+        "editor.unicodeHighlight.invisibleCharacters": false,
+        "editor.wordWrap": "wordWrapColumn",
+        "editor.wordWrapColumn": 80
+    }
 }
