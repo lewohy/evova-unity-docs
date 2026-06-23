@@ -7,7 +7,7 @@
         "ghcr.io/eitsupi/devcontainer-features/mdbook:1": {},
         "ghcr.io/dhoeric/features/act:1": {}
     },
-    "postCreateCommand": "cargo install mdbook-i18n-helpers mdbook-gettext",
+    "postCreateCommand": "cargo install mdbook-i18n-helpers cargo-make",
     "customizations": {
         "vscode": {
             "extensions": [

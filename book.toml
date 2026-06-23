@@ -1,7 +1,10 @@
 [book]
-title = "evova-unity-docs"
-authors = ["Evova"]
+authors = ["Lee Woo Hyun"]
 language = "en"
 
 [output.html]
-mathjax-support = true
+theme = "theme"
+hash-files = false
+additional-css = [
+  "theme/css/language-picker.css",
+]
