@@ -9,11 +9,6 @@ description = "추출된 템플릿을 기존 en.po에 병합"
 command = "msgmerge"
 args = ["--update", "po/en.po", "po/messages.pot"]
 
-[tasks.clean]
-description = "dist 삭제"
-command = "rm"
-args = ["-rf", "dist"]
-
 [tasks.build-en]
 description = "영어 문서 빌드"
 command = "mdbook"
@@ -25,7 +20,3 @@ description = "한국어 문서 빌드"
 command = "mdbook"
 args = ["build", "-d", "book/ko"]
 env = { "MDBOOK_BOOK__LANGUAGE" = "ko" }
-
-[tasks.build-all]
-description = "모든 언어 문서 빌드"
-dependencies = ["clean", "build-en", "build-ko"]

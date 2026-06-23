@@ -8,22 +8,43 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
     steps:
       - uses: actions/checkout@v2
 
-      - name: Setup mdBook
-        uses: peaceiris/actions-mdbook@v2
+      - name: Install All Tools
+        uses: taiki-e/install-action@v2
         with:
-          mdbook-version: '0.5.3'
+          tool: mdbook@0.5.3,cargo-make@0.37.24,mdbook-i18n-helpers@0.4.0
 
-      - run: mdbook build
+      - run: echo ${{ github.event.repository.name }}
+
+      - name: Build en
+        env:
+          MDBOOK_OUTPUT__HTML__SITE_URL: /${{ github.event.repository.name }}
+        run: echo $MDBOOK_OUTPUT__HTML__SITE_URL && cargo make build-en
+
+      - name: Build ko
+        env:
+          MDBOOK_OUTPUT__HTML__SITE_URL: /${{ github.event.repository.name }}/ko
+        run: cargo make build-ko
+
+      - name: Tar artifact
+        if: ${{ github.actor == 'nektos/act' }}
+        run: tar -cvf book.tar ./book
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        if: ${{ github.actor == 'nektos/act' }}
+        with:
+          name: book-tar
+          path: ./book.tar
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
-        if: ${{ github.ref == 'refs/heads/main' }}
+        if: ${{ github.ref == 'refs/heads/main' && github.actor != 'nektos/act' }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./book

@@ -9,6 +9,11 @@
       "version": "1.0.0",
       "resolved": "ghcr.io/eitsupi/devcontainer-features/mdbook@sha256:fc0a07bf2e8577c44aa83f5b484f8d857721cb493d89fc70976a64cb1b47b21d",
       "integrity": "sha256:fc0a07bf2e8577c44aa83f5b484f8d857721cb493d89fc70976a64cb1b47b21d"
+    },
+    "ghcr.io/lee-orr/rusty-dev-containers/cargo-binstall:0": {
+      "version": "0.1.8",
+      "resolved": "ghcr.io/lee-orr/rusty-dev-containers/cargo-binstall@sha256:8eb234bd3165a608bcba39892fac7f0be45ed9604084881c7f113c0115d25162",
+      "integrity": "sha256:8eb234bd3165a608bcba39892fac7f0be45ed9604084881c7f113c0115d25162"
     }
   }
 }

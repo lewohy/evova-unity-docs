@@ -18,11 +18,12 @@
             }
         },
         {
-            "label": "mdBook: build",
+            "label": "cargo make: build",
             "type": "shell",
-            "command": "mdbook",
+            "command": "sh",
             "args": [
-                "build"
+                "-c",
+                "cargo make build-en && cargo make build-ko"
             ],
             "group": {
                 "kind": "build",
