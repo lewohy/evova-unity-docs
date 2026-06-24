@@ -12,7 +12,7 @@ jobs:
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v7
 
       - name: Install All Tools
         uses: taiki-e/install-action@v2
@@ -36,7 +36,7 @@ jobs:
         run: tar -cvf book.tar ./book
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v7
         if: ${{ github.actor == 'nektos/act' }}
         with:
           name: book-tar
