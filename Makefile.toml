@@ -4,8 +4,13 @@ command = "mdbook"
 args = ["build", "-d", "po"]
 env = { "MDBOOK_OUTPUT" = '{"xgettext": {}}' }
 
-[tasks.merge]
-description = "추출된 템플릿을 기존 en.po에 병합"
+[tasks.msginit]
+description = "pot로 en.po 초기화"
+command = "msginit"
+args = ["--no-translator", "-i", "po/messages.pot", "-o", "po/en.po", "-l", "en"]
+
+[tasks.msgmerge]
+description = "pot를 기존 en.po에 병합"
 command = "msgmerge"
 args = ["--update", "po/en.po", "po/messages.pot"]
 

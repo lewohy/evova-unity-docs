@@ -1,8 +1,8 @@
 
 msgid ""
 msgstr ""
-"Project-Id-Version: evova-unity-docs\n"
-"POT-Creation-Date: 2026-06-22T17:16:44Z\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2026-06-24T00:42:45Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
