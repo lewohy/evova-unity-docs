@@ -1,0 +1,19 @@
+{
+  "features": {
+    "ghcr.io/dhoeric/features/act:1": {
+      "version": "1.0.0",
+      "resolved": "ghcr.io/dhoeric/features/act@sha256:2e99eed677768dff36de20e856f2f6fd285a30ea868dae229e848a2871c4462d",
+      "integrity": "sha256:2e99eed677768dff36de20e856f2f6fd285a30ea868dae229e848a2871c4462d"
+    },
+    "ghcr.io/eitsupi/devcontainer-features/mdbook:1": {
+      "version": "1.0.0",
+      "resolved": "ghcr.io/eitsupi/devcontainer-features/mdbook@sha256:fc0a07bf2e8577c44aa83f5b484f8d857721cb493d89fc70976a64cb1b47b21d",
+      "integrity": "sha256:fc0a07bf2e8577c44aa83f5b484f8d857721cb493d89fc70976a64cb1b47b21d"
+    },
+    "ghcr.io/lee-orr/rusty-dev-containers/cargo-binstall:0": {
+      "version": "0.1.8",
+      "resolved": "ghcr.io/lee-orr/rusty-dev-containers/cargo-binstall@sha256:8eb234bd3165a608bcba39892fac7f0be45ed9604084881c7f113c0115d25162",
+      "integrity": "sha256:8eb234bd3165a608bcba39892fac7f0be45ed9604084881c7f113c0115d25162"
+    }
+  }
+}

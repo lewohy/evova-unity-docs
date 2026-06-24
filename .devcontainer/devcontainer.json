@@ -1,34 +1,28 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/rust
 {
-  "name": "Jekyll",
-  "image": "mcr.microsoft.com/devcontainers/jekyll:2-bullseye",
-  "onCreateCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
-  "postCreateCommand": "bash .devcontainer/post-create.sh",
-  "customizations": {
-    "vscode": {
-      "settings": {
-        "terminal.integrated.defaultProfile.linux": "zsh"
-      },
-      "extensions": [
-        // Liquid tags auto-complete
-        "killalau.vscode-liquid-snippets",
-        // Liquid syntax highlighting and formatting
-        "Shopify.theme-check-vscode",
-        // Shell
-        "timonwong.shellcheck",
-        "mkhl.shfmt",
-        // Common formatter
-        "EditorConfig.EditorConfig",
-        "esbenp.prettier-vscode",
-        "stylelint.vscode-stylelint",
-        "yzhang.markdown-all-in-one",
-        // Git
-        "mhutchie.git-graph",
-        "waderyan.gitblame",
-        // JSON
-        "biomejs.biome",
-        // Markdown
-        "DavidAnson.vscode-markdownlint"
-      ]
-    }
-  }
+    "name": "mdBook",
+    "image": "mcr.microsoft.com/devcontainers/rust:2-1-trixie",
+    "features": {
+        "ghcr.io/eitsupi/devcontainer-features/mdbook:1": {
+            "version": "0.5.3"
+        },
+        "ghcr.io/dhoeric/features/act:1": {},
+        "ghcr.io/lee-orr/rusty-dev-containers/cargo-binstall:0": {
+            "packages": "mdbook-i18n-helpers@0.4.0,cargo-make@0.37.24"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "github.vscode-github-actions",
+                "DavidAnson.vscode-markdownlint",
+                "mhutchie.git-graph",
+                "codezombiech.gitignore",
+                "waderyan.gitblame",
+                "Gruntfuggly.todo-tree"
+            ]
+        }
+    },
+    "remoteUser": "vscode"
 }

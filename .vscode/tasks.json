@@ -1,26 +1,34 @@
 {
-  "version": "2.0.0",
-  "tasks": [
-    {
-      "label": "Run Jekyll Server",
-      "type": "shell",
-      "command": "./tools/run.sh",
-      "group": {
-        "kind": "build",
-        "isDefault": true
-      },
-      "problemMatcher": [],
-      "detail": "Runs the Jekyll server with live reload."
-    },
-    {
-      "label": "Build Jekyll Site",
-      "type": "shell",
-      "command": "./tools/test.sh",
-      "group": {
-        "kind": "build"
-      },
-      "problemMatcher": [],
-      "detail": "Build the Jekyll site for production."
-    }
-  ]
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "mdBook: serve",
+            "type": "shell",
+            "command": "mdbook",
+            "args": [
+                "serve",
+                "-n",
+                "127.0.0.1"
+            ],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "cargo make: build",
+            "type": "shell",
+            "command": "sh",
+            "args": [
+                "-c",
+                "cargo make build-en && cargo make build-ko"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
 }

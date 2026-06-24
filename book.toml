@@ -1,0 +1,10 @@
+[book]
+authors = ["Lee Woo Hyun"]
+language = "en"
+
+[output.html]
+theme = "theme"
+hash-files = false
+additional-css = [
+  "theme/css/language-picker.css",
+]
