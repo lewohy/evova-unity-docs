@@ -20,7 +20,8 @@
                 "mhutchie.git-graph",
                 "codezombiech.gitignore",
                 "waderyan.gitblame",
-                "Gruntfuggly.todo-tree"
+                "Gruntfuggly.todo-tree",
+                "redhat.vscode-yaml"
             ]
         }
     },

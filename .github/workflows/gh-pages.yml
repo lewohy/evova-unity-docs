@@ -7,12 +7,12 @@ on:
   workflow_dispatch:
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
+    # 연달아 실행될 경우 이전 작업을 취소하고 새 작업을 실행
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
-    permissions:
-      contents: write
+      cancel-in-progress: true
     steps:
       - uses: actions/checkout@v7
 
@@ -21,32 +21,50 @@ jobs:
         with:
           tool: mdbook@0.5.3,cargo-make@0.37.24,mdbook-i18n-helpers@0.4.0
 
-      - run: echo ${{ github.event.repository.name }}
-
       - name: Build en
         env:
           MDBOOK_OUTPUT__HTML__SITE_URL: /${{ github.event.repository.name }}
-        run: echo $MDBOOK_OUTPUT__HTML__SITE_URL && cargo make build-en
+        run: cargo make build-en
 
       - name: Build ko
         env:
           MDBOOK_OUTPUT__HTML__SITE_URL: /${{ github.event.repository.name }}/ko
         run: cargo make build-ko
 
-      - name: Tar artifact
-        if: ${{ github.actor == 'nektos/act' }}
-        run: tar -cvf book.tar ./book
+      # - name: Tar artifact
+      #   if: ${{ github.actor == 'nektos/act' }}
+      #   run: tar -cvf book.tar ./book
 
-      - name: Upload artifact
-        uses: actions/upload-artifact@v7
-        if: ${{ github.actor == 'nektos/act' }}
-        with:
-          name: book-tar
-          path: ./book.tar
+      # - name: Upload artifact
+      #   uses: actions/upload-artifact@v7
+      #   if: ${{ github.actor == 'nektos/act' }}
+      #   with:
+      #     name: book-tar
+      #     path: ./book.tar
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        if: ${{ github.actor != 'nektos/act' }}
+      - name: Upload static files as artifact
+        id: deployment
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./book
+          path: ./book
+
+  deploy:
+    # github actions에서만 배포되도록 설정
+    if: ${{ github.actor != 'nektos/act' }}
+    needs: build
+    permissions:
+      # to deploy to Pages
+      pages: write
+      # to verify the deployment originates from an appropriate source
+      id-token: write
+
+    # Deploy to the github-pages environment
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
